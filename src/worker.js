@@ -35,14 +35,19 @@ export default {
     if (!env.APPS_SCRIPT_URL || !env.FORM_KEY) return json({ ok: false, error: "not_configured" }, 503);
 
     try {
-      const r = await fetch(env.APPS_SCRIPT_URL, {
+      // Apps Script ejecuta el POST y responde 302 a una URL con el resultado (que se lee con GET)
+      const first = await fetch(env.APPS_SCRIPT_URL.replace(/[^\x21-\x7E]/g, ""), {
         method: "POST",
         headers: { "content-type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({ ...data, key: env.FORM_KEY }),
-        redirect: "follow",
+        body: JSON.stringify({ ...data, key: env.FORM_KEY.replace(/[^\x21-\x7E]/g, "") }),
+        redirect: "manual",
       });
-      const out = await r.json().catch(() => ({}));
-      if (!r.ok || !out.ok) throw new Error("upstream");
+      const loc = first.headers.get("location");
+      const r = loc ? await fetch(loc) : first;
+      const txt = await r.text();
+      let out = {};
+      try { out = JSON.parse(txt); } catch { /* respuesta no JSON */ }
+      if (!out.ok) throw new Error("upstream");
       return json({ ok: true });
     } catch {
       return json({ ok: false, error: "upstream" }, 502);
