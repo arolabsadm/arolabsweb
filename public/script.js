@@ -1,30 +1,42 @@
-// ---- Formulario ----
-// Pega aquí tu endpoint de Formspree (https://formspree.io/f/XXXXXXXX).
-// Si está vacío, el formulario abre el correo del visitante como alternativa.
-const FORM_ENDPOINT = "";
+// ---- Formulario (backend propio: /api/contact en el Worker) ----
 const MAIL = "arolabs.adm@gmail.com";
 const form = document.getElementById("contact");
 const msg = document.getElementById("msg");
+const openedAt = Date.now();
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const d = new FormData(form);
-  if (d.get("website")) return; // honeypot anti-spam
-  if (!FORM_ENDPOINT) {
-    const body = encodeURIComponent(
-      `Nombre: ${d.get("name")}\nNegocio: ${d.get("company")}\nEmail: ${d.get("email")}\n\n${d.get("message")}`
-    );
-    location.href = `mailto:${MAIL}?subject=${encodeURIComponent("Consulta web - " + d.get("name"))}&body=${body}`;
-    return;
-  }
+  const btn = form.querySelector("button");
+  const d = Object.fromEntries(new FormData(form));
+  d.elapsed = Date.now() - openedAt;
+  btn.disabled = true;
+  msg.className = "";
   msg.textContent = "Enviando…";
   try {
-    const r = await fetch(FORM_ENDPOINT, { method: "POST", body: d, headers: { Accept: "application/json" } });
-    if (!r.ok) throw new Error("send failed");
-    form.reset();
-    msg.textContent = "¡Gracias! Te respondemos en menos de 24 h.";
+    const r = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(d),
+    });
+    const out = await r.json().catch(() => ({}));
+    if (r.status === 422) {
+      msg.className = "err";
+      msg.textContent = "Revisa los datos: nombre, email válido y mensaje son obligatorios.";
+    } else if (!r.ok || !out.ok) {
+      throw new Error("send failed");
+    } else {
+      form.reset();
+      msg.textContent = "¡Gracias! Hemos recibido tu consulta y te respondemos en menos de 24 h.";
+    }
   } catch {
-    msg.textContent = `No se pudo enviar. Escríbenos a ${MAIL}`;
+    // Alternativa: abrir el correo del visitante
+    const body = encodeURIComponent(
+      `Nombre: ${d.name}\nNegocio: ${d.company}\nEmail: ${d.email}\n\n${d.message}`
+    );
+    msg.className = "err";
+    msg.innerHTML = `No hemos podido enviarlo. <a href="mailto:${MAIL}?subject=${encodeURIComponent("Consulta web - " + d.name)}&body=${body}">Envíanoslo por email</a>.`;
+  } finally {
+    btn.disabled = false;
   }
 });
 
