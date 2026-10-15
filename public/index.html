@@ -3,74 +3,142 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Arolabs · Páginas web para pymes, rápidas y listas en días</title>
-<meta name="description" content="Arolabs crea webs profesionales para pequeñas y medianas empresas de forma ágil y automatizada. Diseño moderno, precio claro y entrega en días.">
+<title>Arolabs · Webs profesionales para pymes, listas en días</title>
+<meta name="description" content="Arolabs diseña y lanza webs modernas y rápidas para pequeñas y medianas empresas. Propuesta personalizada sin compromiso.">
 <meta name="theme-color" content="#0B1F3A">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header><div class="wrap">
-  <a href="#"><img src="assets/logo.svg" alt="Arolabs"></a>
-  <nav><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#precios">Precios</a><a href="#contacto" class="btn" style="margin-left:24px;padding:9px 20px">Contactar</a></nav>
+<div class="progress" id="progress"></div>
+
+<header id="top"><div class="wrap">
+  <a href="#" aria-label="Arolabs"><img src="assets/logo-light.svg" alt="Arolabs"></a>
+  <nav>
+    <a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#ejemplos">Estilos</a><a href="#faq">Preguntas</a>
+    <a href="#contacto" class="btn sm">Pedir propuesta</a>
+  </nav>
 </div></header>
 
 <main>
-<div class="hero"><div class="wrap">
-  <span class="tag">Webs para pymes · Entrega en días</span>
-  <h1>Tu negocio merece una web <em>que trabaje por ti</em></h1>
-  <p class="lead">Diseñamos y lanzamos páginas web profesionales, rápidas y listas para captar clientes. Sin complicaciones técnicas, con precios claros.</p>
-  <div class="actions"><a class="btn" href="#contacto">Pide tu propuesta gratis</a><a class="btn ghost" href="#proceso">Cómo trabajamos</a></div>
+<!-- HERO -->
+<section class="hero"><div class="blob b1"></div><div class="blob b2"></div><div class="gridbg"></div>
+<div class="wrap hero-grid">
+  <div class="hero-copy">
+    <span class="tag reveal"><i></i> Estudio web para pymes</span>
+    <h1 class="reveal" style="--d:.1s">Tu web, <em>construida</em> mientras tú diriges tu negocio</h1>
+    <p class="lead reveal" style="--d:.2s">Diseñamos y lanzamos webs modernas, rápidas y pensadas para convertir visitas en clientes. Sin tecnicismos y con entrega en días.</p>
+    <div class="actions reveal" style="--d:.3s">
+      <a class="btn" href="#contacto">Pedir propuesta gratuita <span>→</span></a>
+      <a class="btn ghost" href="#proceso">Ver cómo trabajamos</a>
+    </div>
+    <ul class="checks reveal" style="--d:.4s"><li>Propuesta sin compromiso</li><li>Diseño a medida</li><li>Dominio incluido</li></ul>
+  </div>
+
+  <div class="stage reveal" style="--d:.25s" aria-hidden="true">
+    <div class="mock" id="mock" data-stage="0">
+      <div class="mock-bar"><b></b><b></b><b></b><span class="url"><i></i> tunegocio.com</span></div>
+      <div class="mock-body">
+        <div class="m-nav"><span class="m-logo blk"></span><span class="m-link blk"></span><span class="m-link blk"></span><span class="m-link blk"></span><span class="m-cta blk"></span></div>
+        <div class="m-hero">
+          <div class="m-text">
+            <div class="m-h blk"><em>Tu negocio,</em><em>a otro nivel</em></div>
+            <div class="m-p blk"></div><div class="m-p s blk"></div>
+            <div class="m-btn blk"><em>Reservar</em></div>
+          </div>
+          <div class="m-img blk"><svg viewBox="0 0 100 60"><circle cx="72" cy="20" r="9"/><path d="M0 60 L30 28 L52 46 L68 34 L100 60Z"/></svg></div>
+        </div>
+        <div class="m-cards"><div class="m-card blk"><i></i><u></u><u></u></div><div class="m-card blk"><i></i><u></u><u></u></div><div class="m-card blk"><i></i><u></u><u></u></div></div>
+      </div>
+      <div class="mock-status"><span class="dot"></span><b id="stLabel">Estructura</b><div class="bar"><i id="stBar"></i></div></div>
+      <div class="live">✓ Online</div>
+    </div>
+    <div class="chip c1">⚡ Carga en &lt; 1 s</div>
+    <div class="chip c2">📱 100% responsive</div>
+    <div class="chip c3">🔍 Listo para Google</div>
+  </div>
+</div>
+</section>
+
+<!-- STRIP -->
+<div class="strip"><div class="wrap">
+  <div><b data-count="7" data-pre="≤ ">0</b><span>días de entrega objetivo</span></div>
+  <div><b data-count="100" data-suf="%">0</b><span>adaptada a móvil</span></div>
+  <div><b data-count="24" data-pre="&lt; " data-suf=" h">0</b><span>respuesta a tu consulta</span></div>
+  <div><b data-count="0" data-suf=" €">0</b><span>por pedir tu propuesta</span></div>
 </div></div>
 
+<!-- SERVICIOS -->
 <section id="servicios"><div class="wrap">
-  <h2>Todo lo que necesitas para estar online</h2>
-  <p class="sub">Nos ocupamos de todo para que tú solo te preocupes de tu negocio.</p>
-  <div class="grid">
-    <div class="card"><div class="ic">◐</div><h3>Diseño a medida</h3><p>Una imagen cuidada y coherente con tu marca, adaptada a móvil, tablet y ordenador.</p></div>
-    <div class="card"><div class="ic">⚡</div><h3>Rapidez y SEO</h3><p>Webs ligeras que cargan al instante y están preparadas para aparecer en Google.</p></div>
-    <div class="card"><div class="ic">✉</div><h3>Captación de clientes</h3><p>Formularios y llamadas a la acción que convierten visitas en consultas reales.</p></div>
-    <div class="card"><div class="ic">⚙</div><h3>Dominio y mantenimiento</h3><p>Gestionamos dominio, alojamiento y cambios para que nunca te preocupes.</p></div>
+  <div class="head reveal"><span class="eyebrow">Qué hacemos</span><h2>Todo lo que tu negocio necesita para brillar online</h2><p>Un solo equipo para diseño, desarrollo, dominio y puesta en marcha.</p></div>
+  <div class="grid4">
+    <article class="card spot reveal"><div class="ic">◐</div><h3>Diseño a medida</h3><p>Una identidad visual cuidada y coherente con tu marca, que genera confianza desde el primer segundo.</p></article>
+    <article class="card spot reveal" style="--d:.08s"><div class="ic">⚡</div><h3>Velocidad y SEO</h3><p>Webs ligeras que cargan al instante y están preparadas para que Google las encuentre.</p></article>
+    <article class="card spot reveal" style="--d:.16s"><div class="ic">✉</div><h3>Captación de clientes</h3><p>Formularios y llamadas a la acción pensadas para que tus visitas te contacten.</p></article>
+    <article class="card spot reveal" style="--d:.24s"><div class="ic">⚙</div><h3>Dominio y mantenimiento</h3><p>Nos encargamos de dominio, alojamiento y cambios. Tú solo te preocupas de tu negocio.</p></article>
   </div>
 </div></section>
 
+<!-- PROCESO -->
 <section id="proceso" class="dark"><div class="wrap">
-  <h2>Así de sencillo</h2>
-  <p class="sub">Un proceso claro, sin reuniones interminables.</p>
-  <div class="grid">
-    <div class="step"><b>01</b><h3>Cuéntanos tu negocio</h3><p>Rellenas un formulario breve con lo esencial.</p></div>
-    <div class="step"><b>02</b><h3>Recibe tu propuesta</h3><p>Te enviamos diseño y presupuesto cerrado por email.</p></div>
-    <div class="step"><b>03</b><h3>Revisamos juntos</h3><p>Ajustamos hasta que estés 100% satisfecho.</p></div>
-    <div class="step"><b>04</b><h3>Publicamos</h3><p>Tu web online, con dominio propio y lista para vender.</p></div>
+  <div class="head reveal"><span class="eyebrow">Proceso</span><h2>De la idea a tu web online, en cuatro pasos</h2><p>Sin reuniones eternas. Tú decides, nosotros ejecutamos.</p></div>
+  <div class="timeline" id="timeline"><div class="tl-line"><i id="tlFill"></i></div>
+    <div class="tl-step reveal"><span class="num">01</span><div><h3>Nos cuentas tu negocio</h3><p>Rellenas un formulario breve con lo esencial: qué haces, a quién te diriges y qué necesitas.</p></div></div>
+    <div class="tl-step reveal"><span class="num">02</span><div><h3>Recibes una propuesta</h3><p>Te enviamos por email un diseño y un presupuesto cerrado y personalizado, sin compromiso.</p></div></div>
+    <div class="tl-step reveal"><span class="num">03</span><div><h3>Afinamos juntos</h3><p>Ajustamos textos, imágenes y estilo hasta que estés 100% satisfecho con el resultado.</p></div></div>
+    <div class="tl-step reveal"><span class="num">04</span><div><h3>Publicamos y mantenemos</h3><p>Tu web sale online con dominio propio, HTTPS y todo listo para empezar a captar clientes.</p></div></div>
   </div>
 </div></section>
 
-<section id="precios"><div class="wrap">
-  <h2>Precios claros</h2>
-  <p class="sub">Orientativos: te daremos un presupuesto cerrado según tus necesidades.</p>
-  <div class="grid">
-    <div class="card"><h3>Esencial</h3><div class="price">desde 290 €</div><ul><li>Web de 1 página</li><li>Diseño adaptable</li><li>Formulario de contacto</li><li>Dominio y publicación</li></ul></div>
-    <div class="card pop"><h3>Profesional</h3><div class="price">desde 590 €</div><ul><li>Hasta 5 secciones</li><li>SEO básico</li><li>Analítica</li><li>1 mes de soporte</li></ul></div>
-    <div class="card"><h3>A medida</h3><div class="price">Consultar</div><ul><li>Reservas, catálogo, blog…</li><li>Integraciones</li><li>Mantenimiento mensual</li></ul></div>
+<!-- EJEMPLOS -->
+<section id="ejemplos"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow">Estilos</span><h2>Un diseño distinto para cada tipo de negocio</h2><p>Conceptos de ejemplo para mostrarte hacia dónde podemos llevar tu web.</p></div>
+  <div class="grid4 tiles">
+    <figure class="tile reveal" style="--a:#F59E0B;--b:#7C2D12"><div class="t-top"><i></i><i></i><i></i></div><div class="t-hero"><u></u><u></u><s></s></div><figcaption>Restauración</figcaption></figure>
+    <figure class="tile reveal" style="--d:.08s;--a:#19C3A6;--b:#0B3B4A"><div class="t-top"><i></i><i></i><i></i></div><div class="t-hero"><u></u><u></u><s></s></div><figcaption>Salud y bienestar</figcaption></figure>
+    <figure class="tile reveal" style="--d:.16s;--a:#6D9BFF;--b:#0B1F3A"><div class="t-top"><i></i><i></i><i></i></div><div class="t-hero"><u></u><u></u><s></s></div><figcaption>Servicios profesionales</figcaption></figure>
+    <figure class="tile reveal" style="--d:.24s;--a:#F472B6;--b:#4C1D95"><div class="t-top"><i></i><i></i><i></i></div><div class="t-hero"><u></u><u></u><s></s></div><figcaption>Comercio y moda</figcaption></figure>
   </div>
 </div></section>
 
-<section id="contacto" style="padding-top:0"><div class="wrap">
-  <h2>Hablemos de tu proyecto</h2>
-  <p class="sub">Cuéntanos qué necesitas y te respondemos en menos de 24 horas.</p>
-  <form id="contact">
-    <label for="name">Nombre</label><input id="name" name="name" required>
-    <label for="company">Empresa / negocio</label><input id="company" name="company">
-    <label for="email">Email</label><input id="email" name="email" type="email" required>
-    <label for="message">¿Qué necesitas?</label><textarea id="message" name="message" required></textarea>
+<!-- POR QUÉ -->
+<section class="soft"><div class="wrap split">
+  <div class="reveal"><span class="eyebrow">Por qué Arolabs</span><h2>Profesionalidad de agencia, trato cercano</h2>
+  <p class="sub">Combinamos experiencia técnica y de producto con procesos automatizados para entregar rápido sin sacrificar calidad.</p>
+  <a class="btn" href="#contacto">Hablemos de tu proyecto</a></div>
+  <ul class="why">
+    <li class="reveal"><b>Entrega ágil</b><span>Procesos automatizados que acortan semanas a días.</span></li>
+    <li class="reveal" style="--d:.08s"><b>Presupuesto cerrado</b><span>Sabes lo que pagas antes de empezar. Sin sorpresas.</span></li>
+    <li class="reveal" style="--d:.16s"><b>Pensada para vender</b><span>Cada sección tiene un objetivo: que te contacten.</span></li>
+    <li class="reveal" style="--d:.24s"><b>Tecnología moderna</b><span>Rápida, segura y fácil de mantener a largo plazo.</span></li>
+  </ul>
+</div></section>
+
+<!-- FAQ -->
+<section id="faq"><div class="wrap narrow">
+  <div class="head reveal"><span class="eyebrow">FAQ</span><h2>Preguntas frecuentes</h2></div>
+  <details class="reveal"><summary>¿Cuánto tarda en estar lista mi web?</summary><p>Depende del alcance, pero nuestro objetivo es entregar en pocos días desde que tenemos el contenido básico.</p></details>
+  <details class="reveal"><summary>¿Cuánto cuesta?</summary><p>Cada negocio es distinto. Te enviamos una propuesta personalizada y cerrada, sin compromiso, tras conocer tus necesidades.</p></details>
+  <details class="reveal"><summary>¿Necesito saber de tecnología?</summary><p>Nada. Nos ocupamos del diseño, el dominio, el alojamiento y la publicación.</p></details>
+  <details class="reveal"><summary>¿Y si quiero cambios después?</summary><p>Podemos encargarnos de las actualizaciones que necesites, puntuales o con mantenimiento continuo.</p></details>
+</div></section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="dark cta"><div class="blob b1"></div><div class="wrap split">
+  <div class="reveal"><span class="eyebrow">Contacto</span><h2>Cuéntanos tu proyecto y recibe una propuesta gratuita</h2><p class="sub">Te respondemos en menos de 24 horas con ideas concretas para tu web.</p></div>
+  <form id="contact" class="reveal" style="--d:.1s">
+    <label for="name">Nombre</label><input id="name" name="name" required autocomplete="name">
+    <label for="company">Tu negocio</label><input id="company" name="company" autocomplete="organization">
+    <label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email">
+    <label for="message">¿Qué necesitas?</label><textarea id="message" name="message" required placeholder="Cuéntanos brevemente a qué te dedicas y qué web tienes en mente"></textarea>
     <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <div style="margin-top:20px"><button class="btn" type="submit">Enviar consulta</button></div>
+    <button class="btn full" type="submit">Enviar consulta <span>→</span></button>
     <p id="msg" role="status"></p>
   </form>
 </div></section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Arolabs</span><a href="mailto:arolabs.adm@gmail.com" style="color:inherit">arolabs.adm@gmail.com</a></div></footer>
+<footer><div class="wrap"><img src="assets/logo-light.svg" alt="Arolabs" height="30"><span>© 2026 Arolabs</span><a href="mailto:arolabs.adm@gmail.com">arolabs.adm@gmail.com</a></div></footer>
 <script src="script.js"></script>
 </body>
 </html>
